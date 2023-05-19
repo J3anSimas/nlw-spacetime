@@ -2,7 +2,8 @@
   "compilerOptions": {
     "types": ["nativewind/types"],
     "noImplicitAny": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "jsx": "react-native"
   },
   "extends": "expo/tsconfig.base"
 }
