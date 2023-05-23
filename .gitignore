@@ -1,3 +1,4 @@
 */node_modules
 packages/server/prisma/dev.db-journal
 packages/server/prisma/dev.db
+*/*.lock
