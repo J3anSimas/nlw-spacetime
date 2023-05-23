@@ -45,11 +45,12 @@ export async function memoriesRoutes(app: FastifyInstance) {
                     content,
                     coverUrl,
                     isPublic,
-                    userUserId: "9b2dea75-16ef-47a6-a99c-6b36c8c4d716",
+                    userUserId: "6dce86ae-3e6f-4fb5-b913-fda392b331b0",
                 },
             });
             res.status(201).send({ memory: memory.memoryId });
         } catch (error) {
+            console.error(error);
             res.status(400).send("Invalid properties sent");
         }
     });
@@ -72,7 +73,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
                     isPublic
                 },
             });
-            res.status(201).send({ memory: memory.memoryId });
+            res.status(201).send({ memory});
         } catch (error) {
             res.status(400).send("Invalid properties sent");
         }
