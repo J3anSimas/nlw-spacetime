@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
-import { User } from "lucide-react";
 import Copyright from "@/components/Copyright";
 import Hero from "@/components/Hero";
+import Signin from "@/components/Signin";
+import EmptyMemories from "@/components/EmptyMemories";
 export default function Home(): ReactNode {
     return (
         <main className="grid min-h-screen grid-cols-2">
@@ -12,38 +13,14 @@ export default function Home(): ReactNode {
                 {/* Stripes */}
                 <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes"></div>
 
-                {/* Sign in */}
-                <a
-                    href={`https://github.com/login/oauth/authorize?client_id=${
-                        process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID || ""
-                    }`}
-                    className="flex items-center gap-3 text-left transition-colors hover:text-gray-50"
-                >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400">
-                        <User className="h-5 w-5 text-gray-500" />
-                    </div>
-                    <p className="max-w-[140px text-sm leading-snug">
-                        <span className="underline">
-                            Crie sua conta e salve suas memórias!
-                        </span>
-                    </p>
-                </a>
-                {/* Hero */}
+                <Signin />
                 <Hero />
                 <Copyright />
             </div>
 
             {/* Right */}
             <div className="flex flex-col bg-[url(../assets/bg-stars.svg)] bg-cover  p-16">
-                <div className="flex flex-1 items-center justify-center">
-                    <p className="w-[340px] text-center leading-relaxed">
-                        Você ainda não registrou nenhuma lembrança, comece a{" "}
-                        <a href="" className="underline hover:text-gray-50">
-                            criar agora
-                        </a>
-                        !
-                    </p>
-                </div>
+                <EmptyMemories />
             </div>
         </main>
     );
